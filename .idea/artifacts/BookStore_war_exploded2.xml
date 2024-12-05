@@ -1,0 +1,39 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="BookStore:war exploded2">
+    <output-path>$PROJECT_DIR$/out/artifacts/BookStore_war_exploded2</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="BookStore" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.30" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.19.4" />
+          <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
+          <element id="library" level="project" name="Maven: org.apache.taglibs:taglibs-standard-impl:1.2.5" />
+          <element id="library" level="project" name="Maven: org.apache.taglibs:taglibs-standard-jstlel:1.2.5" />
+          <element id="library" level="project" name="Maven: org.apache.taglibs:taglibs-standard-spec:1.2.5" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:jstl-api:1.2" />
+          <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.6.2" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-util:9.0.16" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:9.0.16" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.10.1" />
+          <element id="library" level="project" name="Maven: org.javafxdata:datafx-datareader:8.0b5" />
+          <element id="library" level="project" name="Maven: org.javafxdata:datafx-core:8.0b5" />
+          <element id="library" level="project" name="Maven: javax.json:javax.json-api:1.0" />
+          <element id="library" level="project" name="Maven: com.ip2location:ip2location-io-java:1.0.0" />
+          <element id="library" level="project" name="Maven: com.ip2location:ip2location-java:8.11.2" />
+          <element id="library" level="project" name="Maven: com.opencsv:opencsv:5.8" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-text:1.10.0" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.4" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.2" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-collections4:4.4" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.13.0" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="BookStore/web/Web" />
+    </root>
+  </artifact>
+</component>

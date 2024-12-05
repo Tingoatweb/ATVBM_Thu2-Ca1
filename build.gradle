@@ -1,0 +1,128 @@
+
+
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id "org.hidetake.ssh" version "2.11.2"
+    id 'war'
+}
+apply plugin: 'org.hidetake.ssh'
+
+remotes {
+    host {
+        host = '192.168.1.100'
+        user = 'trang'
+        password = '13122003'
+    }
+}
+// Gán knownHostsConfig cho ssh.settings
+ssh.settings {
+    knownHosts = allowAnyHosts
+}
+
+
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    implementation 'com.maxmind.geoip2:geoip2:4.2.0'
+
+    api libs.mysql.mysql.connector.java
+    api libs.taglibs.standard
+    api libs.org.apache.taglibs.taglibs.standard.jstlel
+    api libs.org.apache.taglibs.taglibs.standard.spec
+    api libs.javax.servlet.jsp.jstl.jstl.api
+    api libs.com.sun.mail.javax.mail
+    api libs.org.apache.tomcat.tomcat.util
+    api libs.com.google.code.gson.gson
+    api libs.org.javafxdata.datafx.datareader
+    api libs.com.ip2location.ip2location.io.java
+    api libs.com.ip2location.ip2location.java
+    runtimeOnly libs.org.apache.taglibs.taglibs.standard.impl
+    testImplementation libs.junit.junit
+    providedCompile libs.javax.servlet.jsp.jstl.javax.servlet.jsp.jstl.api
+    providedCompile libs.javax.servlet.javax.servlet.api
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    implementation 'org.apache.poi:poi:5.2.5'
+    // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+    implementation 'org.apache.poi:poi-ooxml:5.2.5'
+// https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.3.1'
+// https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/fluent-hc
+    implementation 'org.apache.httpcomponents:fluent-hc:4.5.14'
+
+
+
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+description = 'BookStore Maven Webapp'
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+tasks.withType(JavaCompile){
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc){
+    options.encoding = 'UTF-8'
+}
+task docker_app_start {
+    doLast {
+        println 'begin docker_app_start'
+        ssh.run {
+            session(remotes.host) {
+                execute 'docker stop tomcat8.5.99', ignoreError: true
+                execute 'docker run -it --rm -d ' +
+                        '--name tomcat8.5.99 ' +
+                        '-v /usr/deploy:/usr/local/tomcat/webapps ' +
+                        '-p 80:8080 ' +
+                        'tomcat:8.5.99&'
+            }
+        }
+    }
+}
+task docker_upload_file_to_server {
+    doLast {
+        println 'begin docker_upload_file_to_server'
+        ssh.run {
+            session(remotes.host) {
+                remove '/usr/deploy/lab.war'
+//                remove '/usr/deploy/lab/'
+//                remove '/usr/deploy/BookWeb-master/'
+                put from: "${project.projectDir}/build/libs/BookWeb-master-1.0-SNAPSHOT.war",
+                        into: "/usr/deploy/lab.war"
+            }
+        }
+    }
+}
+
+task docker_deploy {
+    docker_deploy.dependsOn docker_app_start
+    docker_deploy.dependsOn docker_upload_file_to_server
+    docker_deploy.dependsOn build
+    tasks.getByName('docker_app_start').mustRunAfter docker_upload_file_to_server
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,416 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>BookStore</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>BookStore Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.30</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/taglibs/standard -->
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
+    <dependency>
+      <groupId>org.apache.taglibs</groupId>
+      <artifactId>taglibs-standard-impl</artifactId>
+      <version>1.2.5</version>
+      <scope>runtime</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-jstlel -->
+    <dependency>
+      <groupId>org.apache.taglibs</groupId>
+      <artifactId>taglibs-standard-jstlel</artifactId>
+      <version>1.2.5</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-spec -->
+    <dependency>
+      <groupId>org.apache.taglibs</groupId>
+      <artifactId>taglibs-standard-spec</artifactId>
+      <version>1.2.5</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api -->
+    <dependency>
+      <groupId>javax.servlet.jsp.jstl</groupId>
+      <artifactId>jstl-api</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api -->
+    <dependency>
+      <groupId>javax.servlet.jsp.jstl</groupId>
+      <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+      <version>1.2.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>3.0-alpha-1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>1.6.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-util</artifactId>
+      <version>9.0.16</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.10.1</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/org.javafxdata/datafx-datareader -->
+    <dependency>
+      <groupId>org.javafxdata</groupId>
+      <artifactId>datafx-datareader</artifactId>
+      <version>8.0b5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.ip2location</groupId>
+      <artifactId>ip2location-io-java</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/com.ip2location/ip2location-java -->
+    <dependency>
+      <groupId>com.ip2location</groupId>
+      <artifactId>ip2location-java</artifactId>
+      <version>8.11.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.hidetake/gradle-ssh-plugin -->
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml-schemas</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.21.1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans -->
+    <dependency>
+      <groupId>org.apache.xmlbeans</groupId>
+      <artifactId>xmlbeans</artifactId>
+      <version>5.2.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/openxml4j -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>openxml4j</artifactId>
+      <version>1.0-beta</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.maxmind.geoip2/geoip2 -->
+    <dependency>
+      <groupId>com.maxmind.geoip2</groupId>
+      <artifactId>geoip2</artifactId>
+      <version>4.2.0</version>
+    </dependency>
+
+
+
+    <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.9.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.json/json -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20090211</version>
+    </dependency>
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>3.4.5</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.5</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.9.1</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.11.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.5</version>
+    </dependency>
+      <!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
+      <dependency>
+          <groupId>net.coobird</groupId>
+          <artifactId>thumbnailator</artifactId>
+          <version>0.4.20</version>
+      </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.14.0</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>fluent-hc</artifactId>
+      <version>4.5.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api-client</groupId>
+      <artifactId>google-api-client</artifactId>
+      <version>1.22.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client</artifactId>
+      <version>1.22.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.apis</groupId>
+      <artifactId>google-api-services-oauth2</artifactId>
+      <version>v2-rev120-1.22.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.apis</groupId>
+      <artifactId>google-api-services-plus</artifactId>
+      <version>v1-rev453-1.22.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.webjars/lru-cache -->
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>lru-cache</artifactId>
+      <version>2.5.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.webjars.npm/lru -->
+    <dependency>
+      <groupId>org.webjars.npm</groupId>
+      <artifactId>lru</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.webjars.npm/lru-cache -->
+    <dependency>
+      <groupId>org.webjars.npm</groupId>
+      <artifactId>lru-cache</artifactId>
+      <version>10.2.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.mvnpm/lru-cache -->
+    <dependency>
+      <groupId>org.mvnpm</groupId>
+      <artifactId>lru-cache</artifactId>
+      <version>10.2.2</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/com.maxmind.geoip2/geoip2 -->
+      <dependency>
+          <groupId>com.maxmind.geoip2</groupId>
+          <artifactId>geoip2</artifactId>
+          <version>4.2.0</version>
+      </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.11.0</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/org.webjars/chartjs -->
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>chartjs</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/org.webjars.npm/lru-cache -->
+    <dependency>
+      <groupId>org.webjars.npm</groupId>
+      <artifactId>lru-cache</artifactId>
+      <version>10.2.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.1.0.Final</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+    <dependency>
+      <groupId>org.hibernate.orm</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>7.0.0.Alpha2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.antlr/antlr -->
+    <dependency>
+      <groupId>org.antlr</groupId>
+      <artifactId>antlr</artifactId>
+      <version>3.5.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.json/json -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20240303</version>
+    </dependency><![CDATA[
+    ]]><!-- https://mvnrepository.com/artifact/net.meilcli/hkjson -->
+    <!-- https://mvnrepository.com/artifact/fr.myprysm.vertx/vertx-json -->
+    <dependency>
+      <groupId>fr.myprysm.vertx</groupId>
+      <artifactId>vertx-json</artifactId>
+      <version>0.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/com.maxmind.geoip2/geoip2 -->
+    <dependency>
+      <groupId>com.maxmind.geoip2</groupId>
+      <artifactId>geoip2</artifactId>
+      <version>4.2.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.directory.studio/jars -->
+    <dependency>
+      <groupId>org.apache.directory.studio</groupId>
+      <artifactId>jars</artifactId>
+      <version>1.5.3.v20100330</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/javax.json/javax.json-api -->
+    <dependency>
+      <groupId>javax.json</groupId>
+      <artifactId>javax.json-api</artifactId>
+      <version>1.1.4</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.glassfish</groupId>
+      <artifactId>javax.json</artifactId>
+      <version>1.1.4</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
+    <dependency>
+      <groupId>net.coobird</groupId>
+      <artifactId>thumbnailator</artifactId>
+      <version>0.4.20</version>
+    </dependency>
+      <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+      <dependency>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+          <version>1.2</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+      <dependency>
+          <groupId>commons-codec</groupId>
+          <artifactId>commons-codec</artifactId>
+          <version>1.11</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+      <dependency>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpclient</artifactId>
+          <version>4.5.14</version>
+      </dependency>
+    <dependency>
+      <groupId>org.example</groupId>
+      <artifactId>BookStore</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+
+  </dependencies>
+  <build>
+    <finalName>BookStore</finalName>
+  </build>
+</project>

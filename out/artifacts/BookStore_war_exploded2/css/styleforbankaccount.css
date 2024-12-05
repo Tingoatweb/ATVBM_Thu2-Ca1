@@ -1,0 +1,97 @@
+* {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.container {
+    border: 1px solid rgb(121, 186, 230);
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    height: fit-content;
+    /* position: fixed; */
+    /* top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0; */
+    margin: 100px auto;
+}
+
+.item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 7px 0;
+}
+
+.input {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(121, 186, 230);
+    padding: 3px;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.item label {
+    color: rgb(143, 143, 143);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.loading {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    /* margin: auto; */
+    width: 80px;
+}
+
+#container-loading {
+    z-index: 10;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    /* display: flex !important; */
+    display: none;
+}
+
+#error {
+    color: red;
+    font-size: 10px;
+    font-weight: bold;
+    font-style: italic;
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 95%;
+        padding: 3px;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .item label {
+        font-size: 10px;
+    }
+}
+#exist-key{
+    font-size: 10px;
+    color: green;
+    font-weight: bold;
+}
